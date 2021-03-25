@@ -21,3 +21,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('login', 'Api\UserController@login');
 Route::post('register', 'Api\UserController@register');
+Route::get('produk', 'Api\ProdukController@index');
