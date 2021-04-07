@@ -18,6 +18,10 @@ class TransaksiController extends Controller
             'total_harga' => 'required',
             'name' => 'required',
             'phone' => 'required',
+            'total_transfer' => 'required',
+            'ongkir' => 'required',
+            'jasa_pengiriman' => 'required',
+            'bank' => 'required'
         ]);
 
         if($validasi->fails()){
@@ -78,11 +82,11 @@ class TransaksiController extends Controller
             }
         }
 
-        if(!empty($transaksi)){
+        if(!empty($transaksis)){
             return response()->json([
                 'success' => 1,
                 'message' => 'Transaksi berhasil',
-                'user' => collect($transaksi)
+                'user' => collect($transaksis)
             ]);
         }else{
             $this->error('Transaksi Gagal');
